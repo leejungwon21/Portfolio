@@ -24,6 +24,11 @@ const images = [
   },
 ];
 
+const stats = [
+  { before: "2시간", after: "5분", label: "리포트 작성 시간" },
+  { before: "수작업", after: "자동화", label: "데이터 시각화" },
+];
+
 const sections = [
   {
     label: "Overview",
@@ -45,6 +50,7 @@ const sections = [
       "Figma를 활용한 대시보드 UI 설계",
       "Claude, Google Stitch 등 AI 도구로 화면 구성 및 기능 구현",
       "프롬프트 구조화를 통한 크레딧 사용량 최적화 및 결과 품질 개선",
+      "SQL / VBA를 활용한 데이터 추출 및 전처리 자동화",
     ],
   },
   {
