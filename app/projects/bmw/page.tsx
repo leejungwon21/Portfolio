@@ -50,7 +50,6 @@ const sections = [
       "Figma를 활용한 대시보드 UI 설계",
       "Claude, Google Stitch 등 AI 도구로 화면 구성 및 기능 구현",
       "프롬프트 구조화를 통한 크레딧 사용량 최적화 및 결과 품질 개선",
-      "SQL / VBA를 활용한 데이터 추출 및 전처리 자동화",
     ],
   },
   {
@@ -179,19 +178,6 @@ export default function BmwPage() {
             AI 기반 KPI 대시보드
           </p>
 
-          <p
-            style={{
-              fontFamily: "DM Mono, monospace",
-              fontSize: 12,
-              color: "var(--ink)",
-              opacity: 0.7,
-              letterSpacing: "0.08em",
-              marginBottom: "1.5rem",
-            }}
-          >
-            2025 — 2026 · A-62 팀 (Warranty / After-Sales Operations)
-          </p>
-
           <div style={{ display: "flex", flexWrap: "wrap", gap: 6 }}>
             {[
               "AI 활용",
@@ -200,8 +186,6 @@ export default function BmwPage() {
               "업무 자동화",
               "Claude",
               "Google Stitch",
-              "SQL",
-              "VBA",
             ].map((t) => (
               <span
                 key={t}
