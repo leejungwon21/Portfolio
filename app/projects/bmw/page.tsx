@@ -3,11 +3,11 @@ import Image from "next/image";
 
 const images = [
   {
-    src: "/images/bmw-02-network.png",
+    src: "/images/bmw-01-data-entry.png",
     caption: "Data Entry Portal — 엑셀 업로드로 자동 입력",
   },
   {
-    src: "/images/bmw-01-data-entry.png",
+    src: "/images/bmw-02-network.png",
     caption: "Dealer Network Overview — 전체 지점 현황",
   },
   {
