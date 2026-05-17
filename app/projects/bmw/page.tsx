@@ -24,11 +24,6 @@ const images = [
   },
 ];
 
-const stats = [
-  { before: "2시간", after: "5분", label: "리포트 작성 시간" },
-  { before: "수작업", after: "자동화", label: "데이터 시각화" },
-];
-
 const sections = [
   {
     label: "Overview",
