@@ -9,11 +9,10 @@ const projects = [
     type: "서비스 기획 프로젝트",
     title: "ASAP",
     subtitle: "취업 준비생 통합 플랫폼",
-    desc: "흩어진 취업 정보를 하나로. 사용자 리서치부터 Figma 프로토타입, AI 웹 구현, 피드백 개선까지.",
-    tags: ["서비스 기획", "Figma", "UX Research", "AI 구현"],
+    desc: "흩어진 취업 정보를 하나로. 사용자 리서치부터 페르소나, 여정지도, Figma 프로토타입, AI 웹 구현, 피드백 개선까지.",
+    tags: ["서비스 기획", "Figma", "UX Research", "사용자 여정지도", "AI 구현"],
     accentColor: "var(--blue)",
     accentLight: "var(--blue-light)",
-    cardClass: "asap",
   },
   {
     num: "02",
@@ -25,19 +24,6 @@ const projects = [
     tags: ["AI 활용", "대시보드 설계", "Figma", "업무 자동화"],
     accentColor: "var(--accent)",
     accentLight: "var(--accent-light)",
-    cardClass: "bmw",
-  },
-  {
-    num: "03",
-    slug: "dogpalace",
-    type: "Data & Business",
-    title: "강아지 궁전",
-    subtitle: "DB 구축 및 사업개발",
-    desc: "운영 데이터 체계화부터 사업 모델 검토까지. 서비스엔 데이터가 일관되게 쌓이는 구조가 필요하다.",
-    tags: ["DB 설계", "데이터 구조화", "사업 모델", "운영 개선"],
-    accentColor: "var(--green)",
-    accentLight: "var(--green-light)",
-    cardClass: "dog",
   },
 ];
 
@@ -66,7 +52,6 @@ export default function Home() {
         minHeight: "100vh", display: "flex", flexDirection: "column",
         justifyContent: "flex-end", padding: "0 3rem 5rem", position: "relative", overflow: "hidden",
       }}>
-        {/* 배경 텍스트 */}
         <div style={{
           position: "absolute", top: "50%", left: "50%",
           transform: "translate(-50%, -50%)",
@@ -106,14 +91,12 @@ export default function Home() {
           사용자 흐름과 서비스 개선점을 찾는 예비 서비스 기획자입니다.
         </p>
 
-        {/* 키워드 */}
         <div style={{ display: "flex", gap: 10, marginTop: "2rem", flexWrap: "wrap", position: "relative" }}>
           {keywords.map(k => (
             <span key={k} style={{
               fontFamily: "DM Mono, monospace", fontSize: 10,
               letterSpacing: "0.1em", padding: "5px 14px",
-              border: "1px solid var(--line)", color: "var(--ink-muted)",
-              borderRadius: 2,
+              border: "1px solid var(--line)", color: "var(--ink-muted)", borderRadius: 2,
             }}>{k}</span>
           ))}
         </div>
@@ -139,42 +122,30 @@ export default function Home() {
 
         <div style={{ display: "flex", flexDirection: "column", gap: 1, background: "var(--line)", border: "1px solid var(--line)" }}>
           {projects.map((p, i) => (
-            <div
-              key={p.slug}
-              ref={el => { fadeRefs.current[i] = el; }}
-              className="fade-up"
-            >
+            <div key={p.slug} ref={el => { fadeRefs.current[i] = el; }} className="fade-up">
               <Link href={`/projects/${p.slug}`} style={{ textDecoration: "none", color: "inherit" }}>
-                <div style={{
-                  background: "var(--bg)", padding: "2.5rem",
-                  display: "flex", flexDirection: "row", alignItems: "flex-start", gap: "3rem",
-                  position: "relative", overflow: "hidden",
-                  transition: "background 0.25s",
-                }}
+                <div
+                  style={{
+                    background: "var(--bg)", padding: "2.5rem",
+                    display: "flex", flexDirection: "row", alignItems: "flex-start", gap: "3rem",
+                    position: "relative", overflow: "hidden", transition: "background 0.25s",
+                  }}
                   onMouseEnter={e => (e.currentTarget.style.background = "var(--surface)")}
                   onMouseLeave={e => (e.currentTarget.style.background = "var(--bg)")}
                 >
-                  {/* 왼쪽 컬러 바 */}
                   <div style={{
                     position: "absolute", top: 0, left: 0,
                     width: 3, height: "100%", background: p.accentColor,
                   }} />
-
-                  {/* 배경 번호 */}
                   <div style={{
                     position: "absolute", top: "1.5rem", right: "2.5rem",
                     fontFamily: "DM Serif Display, serif", fontSize: 80,
                     color: p.accentColor, opacity: 0.06,
-                    lineHeight: 1, userSelect: "none", pointerEvents: "none",
-                    letterSpacing: "-0.04em",
+                    lineHeight: 1, userSelect: "none", pointerEvents: "none", letterSpacing: "-0.04em",
                   }}>{p.num}</div>
 
-                  {/* 왼쪽 */}
                   <div style={{ flex: "0 0 300px", display: "flex", flexDirection: "column", gap: "1rem" }}>
-                    <span style={{
-                      fontFamily: "DM Mono, monospace", fontSize: 11,
-                      letterSpacing: "0.05em", color: p.accentColor,
-                    }}>{p.num}</span>
+                    <span style={{ fontFamily: "DM Mono, monospace", fontSize: 11, letterSpacing: "0.05em", color: p.accentColor }}>{p.num}</span>
                     <span style={{
                       fontFamily: "DM Mono, monospace", fontSize: 10,
                       letterSpacing: "0.1em", textTransform: "uppercase",
@@ -182,14 +153,8 @@ export default function Home() {
                       background: p.accentLight, color: p.accentColor,
                       display: "inline-block", width: "fit-content",
                     }}>{p.type}</span>
-                    <h2 style={{
-                      fontFamily: "DM Serif Display, serif", fontSize: 32,
-                      lineHeight: 1.05, letterSpacing: "-0.01em",
-                    }}>{p.title}</h2>
-                    <p style={{
-                      fontFamily: "DM Mono, monospace", fontSize: 11,
-                      color: "var(--ink-faint)", letterSpacing: "0.05em",
-                    }}>{p.subtitle}</p>
+                    <h2 style={{ fontFamily: "DM Serif Display, serif", fontSize: 32, lineHeight: 1.05, letterSpacing: "-0.01em" }}>{p.title}</h2>
+                    <p style={{ fontFamily: "DM Mono, monospace", fontSize: 11, color: "var(--ink-faint)", letterSpacing: "0.05em" }}>{p.subtitle}</p>
                     <div style={{ display: "flex", flexWrap: "wrap", gap: 6 }}>
                       {p.tags.map(t => (
                         <span key={t} style={{
@@ -201,19 +166,13 @@ export default function Home() {
                     </div>
                   </div>
 
-                  {/* 오른쪽 */}
                   <div style={{ flex: 1, display: "flex", flexDirection: "column", justifyContent: "space-between", minHeight: 160 }}>
-                    <p style={{ fontSize: 14, color: "var(--ink-muted)", lineHeight: 1.8, maxWidth: 420 }}>
-                      {p.desc}
-                    </p>
+                    <p style={{ fontSize: 14, color: "var(--ink-muted)", lineHeight: 1.8, maxWidth: 420 }}>{p.desc}</p>
                     <div style={{
                       display: "flex", justifyContent: "space-between", alignItems: "center",
-                      paddingTop: "1.25rem", borderTop: "1px solid var(--line)", marginTop: "auto",
+                      paddingTop: "1.25rem", borderTop: "1px solid var(--line)", marginTop: "2rem",
                     }}>
-                      <span style={{
-                        fontFamily: "DM Mono, monospace", fontSize: 11,
-                        letterSpacing: "0.08em", color: "var(--ink-faint)",
-                      }}>자세히 보기</span>
+                      <span style={{ fontFamily: "DM Mono, monospace", fontSize: 11, letterSpacing: "0.08em", color: "var(--ink-faint)" }}>자세히 보기</span>
                       <span style={{ fontSize: 18, color: p.accentColor }}>↗</span>
                     </div>
                   </div>
@@ -224,20 +183,14 @@ export default function Home() {
         </div>
       </section>
 
-      {/* FOOTER */}
       <footer style={{
-        padding: "3rem",
-        borderTop: "1px solid var(--line)",
+        padding: "3rem", borderTop: "1px solid var(--line)",
         display: "flex", justifyContent: "space-between", alignItems: "center",
       }}>
-        <p style={{
-          fontFamily: "DM Mono, monospace", fontSize: 11,
-          color: "var(--ink-faint)", letterSpacing: "0.08em",
-        }}>원이정 · Business Intelligence & AI Convergence</p>
-        <p style={{
-          fontFamily: "DM Mono, monospace", fontSize: 11,
-          color: "var(--ink-faint)", letterSpacing: "0.08em",
-        }}>© 2026</p>
+        <p style={{ fontFamily: "DM Mono, monospace", fontSize: 11, color: "var(--ink-faint)", letterSpacing: "0.08em" }}>
+          원이정 · Business Intelligence & AI Convergence
+        </p>
+        <p style={{ fontFamily: "DM Mono, monospace", fontSize: 11, color: "var(--ink-faint)", letterSpacing: "0.08em" }}>© 2026</p>
       </footer>
     </>
   );
