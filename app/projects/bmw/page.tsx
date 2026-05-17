@@ -3,11 +3,11 @@ import Image from "next/image";
 
 const images = [
   {
-    src: "/images/bmw-01-data-entry.png",
+    src: "/images/bmw-02-network.png",
     caption: "Data Entry Portal — 엑셀 업로드로 자동 입력",
   },
   {
-    src: "/images/bmw-02-network.png",
+    src: "/images/bmw-01-data-entry.png",
     caption: "Dealer Network Overview — 전체 지점 현황",
   },
   {
@@ -50,7 +50,6 @@ const sections = [
       "Figma를 활용한 대시보드 UI 설계",
       "Claude, Google Stitch 등 AI 도구로 화면 구성 및 기능 구현",
       "프롬프트 구조화를 통한 크레딧 사용량 최적화 및 결과 품질 개선",
-      "SQL / VBA를 활용한 데이터 추출 및 전처리 자동화",
     ],
   },
   {
