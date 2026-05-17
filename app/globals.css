@@ -1,0 +1,39 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&display=swap');
+
+:root {
+  --bg: #F5F3EE;
+  --surface: #EDEAE3;
+  --ink: #1A1916;
+  --ink-muted: #6B6860;
+  --ink-faint: #A8A69F;
+  --line: rgba(26,25,22,0.1);
+  --accent: #C8502A;
+  --accent-light: #F2E8E3;
+  --blue: #2A5FC8;
+  --blue-light: #E3EAF2;
+  --green: #2A8A5C;
+  --green-light: #E3F2EA;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Pretendard', -apple-system, sans-serif;
+  font-weight: 300;
+  line-height: 1.7;
+}
+
+.font-serif { font-family: 'DM Serif Display', serif; }
+.font-mono  { font-family: 'DM Mono', monospace; }
+
+@keyframes nudge {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(5px); }
+}
+.animate-nudge { animation: nudge 2s ease-in-out infinite; }
+
+.fade-up { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
+.fade-up.visible { opacity: 1; transform: translateY(0); }
